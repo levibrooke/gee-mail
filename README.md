@@ -1,4 +1,4 @@
-# GeeMail 
+# GeeMail
 
 GeeMail is a coding exercise meant to simulate an e-mail web application inbox.
 
@@ -6,7 +6,7 @@ GeeMail is a coding exercise meant to simulate an e-mail web application inbox.
 
 With this coding challenge you will be creating a simulation of a little known current e-mail web application you may or may not have heard of.
 
-We have created a basic mail generator script for you that will load a handful of pre-populated messages when your application loads and you will be requried to consume that data and build out UI elements to display that data along with populating new messages and some other basic functionality.
+We have created a basic mail generator script for you that will load a handful of pre-populated messages when your application loads and you will be required to consume that data and build out UI elements to display that data along with populating new messages and some other basic functionality.
 
 ## Pre-Requisites
 You will need the following tools to complete this challenge
@@ -39,7 +39,7 @@ You will need the following tools to complete this challenge
 
 6. Set a recurring function to via the JavaScript `setInterval` function that will call our existing `getNewMessage` function that we have created for you that will return a newly created message with the same properties as your previous messages.
 
-6. All CSS styles should be created in the `css\style.css` file included in the project. 
+6. All CSS styles should be created in the `css\style.css` file included in the project.
 
 7. All JavaScript should be created in the `<head>` element in your included `index.html` file inside of the window.onload function already created in the `<head>` section.
 
@@ -47,4 +47,4 @@ You will need the following tools to complete this challenge
 
 Bonus: You may add any images or any extra functionality that you wish to your application and use any other JavaScript frameworks if you like.
 
-## Most Importanly....Have Fun!
+## Most Importantly....Have Fun!
