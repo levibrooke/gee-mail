@@ -4,15 +4,54 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
+        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE.
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+
+				// Directions
+				// Insert each property from object into a row.
+
+				console.log(window.geemails); // entire array
+
+				// Loop through array and generate objects
+
+				var container = document.getElementById("container");
+
+				for (var i = 0; i < window.geemails.length; i++) {
+					// console.log(window.geemails[i].sender);
+					// console.log(window.geemails[i].date);
+					// console.log(window.geemails[i].subject);
+					// console.log(window.geemails[i].body);
+
+					var createDate = document.createElement("p");
+					createDate.className = "date";
+					createDate.innerHTML = window.geemails[i].date;
+					container.appendChild(createDate);
+
+					var createSender = document.createElement("p");
+					createSender.innerHTML = window.geemails[i].sender;
+					container.appendChild(createSender);
+
+					var createSubject = document.createElement("p");
+					createSubject.innerHTML = window.geemails[i].subject;
+					container.appendChild(createSubject);
+
+					var createBody = document.createElement("p");
+					createBody.innerHTML = window.geemails[i].body;
+					container.appendChild(createBody);
+
+				}
+
+
+
       };
     </script>
 	</head>
 	<body>
-		<div class="container" id="main">
-			Build Me!
-		</div>
+			<header>
+				<h1>GeeMail</h1>
+			</header>
+			<main id="container">
+
+			</main>
 	</body>
 </html>
