@@ -17,27 +17,32 @@
 				var container = document.getElementById("container");
 
 				for (var i = 0; i < window.geemails.length; i++) {
-					// console.log(window.geemails[i].sender);
-					// console.log(window.geemails[i].date);
-					// console.log(window.geemails[i].subject);
-					// console.log(window.geemails[i].body);
 
-					var createDate = document.createElement("p");
+					var createTableRow = document.createElement("tr");
+					createTableRow.className = "tableRow";
+					document.getElementById("emailInbox").appendChild(createTableRow);
+
+					var createDate = document.createElement("td");
 					createDate.className = "date";
 					createDate.innerHTML = window.geemails[i].date;
-					container.appendChild(createDate);
 
-					var createSender = document.createElement("p");
+					var createSender = document.createElement("td");
+					createSender.className = "sender";
 					createSender.innerHTML = window.geemails[i].sender;
-					container.appendChild(createSender);
 
-					var createSubject = document.createElement("p");
+					var createSubject = document.createElement("td");
+					createSubject.className = "subject";
 					createSubject.innerHTML = window.geemails[i].subject;
-					container.appendChild(createSubject);
 
-					var createBody = document.createElement("p");
-					createBody.innerHTML = window.geemails[i].body;
-					container.appendChild(createBody);
+					var getTableRow = document.getElementsByClassName("tableRow");
+
+					// Loop through the table rows and appendChild
+					for (var i = 0; i < getTableRow.length; i++) {
+						getTableRow[i].appendChild(createDate);
+						getTableRow[i].appendChild(createSender);
+						getTableRow[i].appendChild(createSubject);
+					}
+
 
 				}
 
@@ -51,7 +56,9 @@
 				<h1>GeeMail</h1>
 			</header>
 			<main id="container">
+				<table id="emailInbox">
 
+				</table>
 			</main>
 	</body>
 </html>
