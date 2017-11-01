@@ -34,6 +34,10 @@
 					createSubject.className = "subject";
 					createSubject.innerHTML = window.geemails[i].subject;
 
+					var createBody = document.createElement("td");
+					createBody.className = "body";
+					createBody.innerHTML = window.geemails[i].body;
+
 					var getTableRow = document.getElementsByClassName("tableRow");
 
 					// Loop through the table rows and appendChild
@@ -41,6 +45,7 @@
 						getTableRow[i].appendChild(createDate);
 						getTableRow[i].appendChild(createSender);
 						getTableRow[i].appendChild(createSubject);
+						getTableRow[i].appendChild(createBody);
 					}
 
 
