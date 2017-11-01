@@ -39,18 +39,22 @@
 					createBody.innerHTML = window.geemails[i].body;
 
 					var getTableRow = document.getElementsByClassName("tableRow");
-
+					
 					// Loop through the table rows and appendChild
-					for (var i = 0; i < getTableRow.length; i++) {
-						getTableRow[i].appendChild(createDate);
-						getTableRow[i].appendChild(createSender);
-						getTableRow[i].appendChild(createSubject);
-						getTableRow[i].appendChild(createBody);
+					for (var j = 0; j < getTableRow.length; j++) {
+						getTableRow[j].appendChild(createDate);
+						getTableRow[j].appendChild(createSender);
+						getTableRow[j].appendChild(createSubject);
+						getTableRow[j].appendChild(createBody);
 					}
 
 
 				}
 
+				// Inbox counter
+
+				var inboxCounter = window.geemails.length;
+				document.getElementById("counter").innerHTML = "(" + inboxCounter + ")";
 
 
       };
@@ -59,6 +63,7 @@
 	<body>
 			<header>
 				<h1>GeeMail</h1>
+				<h2>Inbox <span id="counter"></span></h2>
 			</header>
 			<main id="container">
 				<table id="emailInbox">
