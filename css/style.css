@@ -1,0 +1,17 @@
+
+header {
+  padding: 50px 20px;
+}
+#emailNav {
+  padding: 0 20px;
+}
+.hidden {
+  display: none;
+}
+
+.body {
+  max-width: 650px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

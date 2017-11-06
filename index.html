@@ -1,7 +1,9 @@
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE.
@@ -14,7 +16,13 @@
 
 				// Loop through array and generate objects
 
-				var container = document.getElementById("container");
+				var container = document.getElementById("contentArea");
+
+				// Recurring function getNewMessage
+
+				setInterval(getNewMessage(), 3000);
+
+				console.log(window.geemails);
 
 				for (var i = 0; i < window.geemails.length; i++) {
 
@@ -39,7 +47,7 @@
 					createBody.innerHTML = window.geemails[i].body;
 
 					var getTableRow = document.getElementsByClassName("tableRow");
-					
+
 					// Loop through the table rows and appendChild
 					for (var j = 0; j < getTableRow.length; j++) {
 						getTableRow[j].appendChild(createDate);
@@ -51,11 +59,20 @@
 
 				}
 
+				var selectRow = document.getElementsByClassName("tableRow");
+
+				for (var i = 0; i < selectRow.length; i++) {
+					selectRow[i].addEventListener("click", showEmail);
+				}
+
+				function showEmail(){
+					console.log("testing");
+				}
+
 				// Inbox counter
 
 				var inboxCounter = window.geemails.length;
 				document.getElementById("counter").innerHTML = "(" + inboxCounter + ")";
-
 
       };
     </script>
@@ -63,12 +80,21 @@
 	<body>
 			<header>
 				<h1>GeeMail</h1>
-				<h2>Inbox <span id="counter"></span></h2>
 			</header>
-			<main id="container">
-				<table id="emailInbox">
-
-				</table>
+			<main id="contentArea" class="container-fluid">
+				<div class="row">
+					<ul id="emailNav" class="col-sm-1 nav flex-column">
+						<li class="nav-item">Inbox <span id="counter"></span></li>
+						<li class="nav-item">Sent</li>
+						<li class="nav-item">Drafts</li>
+						<li class="nav-item">Spam</li>
+						<li class="nav-item">Trash</li>
+					</ul>
+					<table class="table table-hover table-responsive col-sm-10">
+						<tbody id="emailInbox"></tbody>
+					</table>
+					<div class="emailBody hidden"></div>
+				</div>
 			</main>
 	</body>
 </html>
