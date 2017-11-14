@@ -5,13 +5,14 @@ header {
 #emailNav {
   padding: 0 20px;
 }
-.hidden {
-  display: none;
-}
-
+/* Email Table */
 .body {
   max-width: 650px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+/* Email Contents */
+.hidden {
+  display: none;
 }
