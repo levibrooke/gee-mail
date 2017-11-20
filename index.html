@@ -1,131 +1,131 @@
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<script src="js/mail-generator.js"></script>
-		<link href="css/style.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <script>
-      window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE.
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 
-				// Directions
-				// Insert each property from object into a row.
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="js/mail-generator.js"></script>
+	<link href="css/style.css" rel="stylesheet" media="screen">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<script>
+		window.onload = function() {
+			// ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE.
+			// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 
-				console.log(window.geemails); // entire array
+			// Directions
+			// Insert each property from object into a row.
 
-				// Loop through array and generate objects
+			console.log(window.geemails); // entire array
 
-				for (var i = 0; i < window.geemails.length; i++) {
+			// Loop through array and generate objects
 
-					// Create table elements
+			for (var i = 0; i < window.geemails.length; i++) {
 
-					var createTableRow = document.createElement("tr");
-					createTableRow.className = "tableRow";
-					document.getElementById("emailInbox").appendChild(createTableRow);
+				// Create table elements
 
-					var createDate = document.createElement("td");
-					createDate.className = "date";
-					createDate.innerHTML = window.geemails[i].date;
+				var createTableRow = document.createElement("tr");
+				createTableRow.className = "tableRow";
+				document.getElementById("emailInbox").appendChild(createTableRow);
 
-					var createSender = document.createElement("td");
-					createSender.className = "sender";
-					createSender.innerHTML = window.geemails[i].sender;
+				var createDate = document.createElement("td");
+				createDate.className = "date";
+				createDate.innerHTML = window.geemails[i].date;
 
-					var createSubject = document.createElement("td");
-					createSubject.className = "subject";
-					createSubject.innerHTML = window.geemails[i].subject;
+				var createSender = document.createElement("td");
+				createSender.className = "sender";
+				createSender.innerHTML = window.geemails[i].sender;
 
-					var createBody = document.createElement("td");
-					createBody.className = "body";
-					createBody.innerHTML = window.geemails[i].body;
+				var createSubject = document.createElement("td");
+				createSubject.className = "subject";
+				createSubject.innerHTML = window.geemails[i].subject;
 
-					// Create div elements for full email contents
+				var createBody = document.createElement("td");
+				createBody.className = "body";
+				createBody.innerHTML = window.geemails[i].body;
 
-					var createEmailContainer = document.createElement("div");
-					createEmailContainer.className = "showEmail";
-					document.getElementById("emailContent").appendChild(createEmailContainer);
+				// // Create div elements for full email contents
+				//
+				// var createEmailContainer = document.createElement("div");
+				// createEmailContainer.className = "showEmail";
+				// document.getElementById("emailContent").appendChild(createEmailContainer);
+				//
+				// var createEmailDate = document.createElement("div");
+				// createEmailDate.className = "emailDate";
+				// createEmailDate.innerHTML = window.geemails[i].date;
+				//
+				// var createEmailSender = document.createElement("div");
+				// createEmailSender.className = "emailSender";
+				// createEmailSender.innerHTML = window.geemails[i].sender;
+				//
+				// var createEmailSubject = document.createElement("div");
+				// createEmailSubject.className = "emailSubject";
+				// createEmailSubject.innerHTML = window.geemails[i].subject;
+				//
+				// var createEmailBody = document.createElement("div");
+				// createEmailBody.className = "emailBody";
+				// createEmailBody.innerHTML = window.geemails[i].body;
 
-					var createEmailDate = document.createElement("div");
-					createEmailDate.className = "emailDate";
-					createEmailDate.innerHTML = window.geemails[i].date;
+				var getTableRow = document.getElementsByClassName("tableRow");
 
-					var createEmailSender = document.createElement("div");
-					createEmailSender.className = "emailSender";
-					createEmailSender.innerHTML = window.geemails[i].sender;
+				// var getEmailBody = document.getElementsByClassName("showEmail");
 
-					var createEmailSubject = document.createElement("div");
-					createEmailSubject.className = "emailSubject";
-					createEmailSubject.innerHTML = window.geemails[i].subject;
-
-					var createEmailBody = document.createElement("div");
-					createEmailBody.className = "emailBody";
-					createEmailBody.innerHTML = window.geemails[i].body;
-
-					var getTableRow = document.getElementsByClassName("tableRow");
-
-					var getEmailBody = document.getElementsByClassName("showEmail");
-
-					// Loop through the table rows and appendChild
-					for (var j = 0; j < getTableRow.length; j++) {
-						getTableRow[j].appendChild(createDate);
-						getTableRow[j].appendChild(createSender);
-						getTableRow[j].appendChild(createSubject);
-						getTableRow[j].appendChild(createBody);
-					}
-
-					// Loop through the divs w/ class name "showEmail" and appendChild
-					for (var k = 0; k < getEmailBody.length; k++) {
-					 getEmailBody[k].appendChild(createEmailDate);
-					 getEmailBody[k].appendChild(createEmailSender);
-					 getEmailBody[k].appendChild(createEmailSubject);
-					 getEmailBody[k].appendChild(createEmailBody);
-					}
-
-
+				// Loop through the table rows and appendChild
+				for (var j = 0; j < getTableRow.length; j++) {
+					getTableRow[j].appendChild(createDate);
+					getTableRow[j].appendChild(createSender);
+					getTableRow[j].appendChild(createSubject);
+					getTableRow[j].appendChild(createBody);
 				}
 
-				var selectRow = document.getElementsByClassName("tableRow");
+			}
 
-				for (var i = 0; i < selectRow.length; i++) {
-					selectRow[i].addEventListener("click", showEmail);
-					}
+			var selectRow = document.getElementsByClassName("tableRow");
 
-				// Click on nth table row, show nth email
+			for (var i = 0; i < selectRow.length; i++) {
+				selectRow[i].addEventListener("click", showEmail);
+			}
 
-				function showEmail(){
+			// Click on nth table row, show nth email
 
-				}
+			function showEmail() {
 
-				// Inbox counter
 
-				var inboxCounter = window.geemails.length;
-				document.getElementById("counter").innerHTML = "(" + inboxCounter + ")";
 
-      };
-    </script>
-	</head>
-	<body>
-			<header>
-				<h1>GeeMail</h1>
-			</header>
-			<main id="contentArea" class="container-fluid">
-				<div class="row">
-					<ul id="emailNav" class="col-sm-1 nav flex-column">
-						<li class="nav-item">Inbox <span id="counter"></span></li>
-						<li class="nav-item">Sent</li>
-						<li class="nav-item">Drafts</li>
-						<li class="nav-item">Spam</li>
-						<li class="nav-item">Trash</li>
-					</ul>
-					<table class="table table-hover table-responsive col-sm-10">
-						<tbody id="emailInbox"></tbody>
-					</table>
-					<div id="emailContent" class="col-sm-10 hidden"></div>
-				</div>
-			</main>
-			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-	</body>
+				// var rowNumber = selectRow.rowIndex;
+				// var length = window.geemails.length;
+				// var emailPosition = length - rowNumber;
+
+				// testModal.innerHTML = window.geemails[emailPosition].sender;
+
+				console.log("Testing row click");
+
+			}
+
+			// Inbox counter
+
+			var inboxCounter = window.geemails.length;
+			document.getElementById("counter").innerHTML = "(" + inboxCounter + ")";
+
+		};
+	</script>
+</head>
+
+<body>
+	<header>
+		<h1>GeeMail</h1>
+	</header>
+	<main id="contentArea" class="container-fluid">
+		<div class="row">
+			<ul id="emailNav" class="col-sm-1 nav flex-column">
+				<li class="nav-item">Inbox <span id="counter"></span></li>
+				<li class="nav-item">Sent</li>
+				<li class="nav-item">Drafts</li>
+				<li class="nav-item">Spam</li>
+				<li class="nav-item">Trash</li>
+			</ul>
+			<table class="table table-hover table-responsive col-sm-10">
+				<tbody id="emailInbox"></tbody>
+			</table>
+		</div>
+	</main>
+</body>
+
 </html>
