@@ -21,23 +21,23 @@
 
 				// Create table elements
 
-				var createTableRow = document.createElement("tr");
+				var createTableRow = document.createElement("div");
 				createTableRow.className = "tableRow";
 				document.getElementById("emailInbox").appendChild(createTableRow);
 
-				var createDate = document.createElement("td");
+				var createDate = document.createElement("div");
 				createDate.className = "date";
 				createDate.innerHTML = window.geemails[i].date;
 
-				var createSender = document.createElement("td");
+				var createSender = document.createElement("div");
 				createSender.className = "sender";
 				createSender.innerHTML = window.geemails[i].sender;
 
-				var createSubject = document.createElement("td");
+				var createSubject = document.createElement("div");
 				createSubject.className = "subject";
 				createSubject.innerHTML = window.geemails[i].subject;
 
-				var createBody = document.createElement("td");
+				var createBody = document.createElement("div");
 				createBody.className = "body";
 				createBody.innerHTML = window.geemails[i].body;
 
@@ -99,9 +99,9 @@
 				<li class="nav-item">Spam</li>
 				<li class="nav-item">Trash</li>
 			</ul>
-			<table class="table table-hover table-responsive col-sm-10">
-				<tbody id="emailInbox"></tbody>
-			</table>
+			<div id="inboxContainer">
+				<div id="emailInbox"></div>
+			</div>
 		</div>
 	</main>
 </body>
