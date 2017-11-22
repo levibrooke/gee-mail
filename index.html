@@ -10,17 +10,13 @@
 			// ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE.
 			// We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 
-			// Directions
 			// Insert each property from object into a row.
-
 			console.log(window.geemails); // entire array
 
 			// Loop through array and generate objects
-
 			for (var i = 0; i < window.geemails.length; i++) {
 
 				// Create table elements
-
 				var createTableRow = document.createElement("div");
 				createTableRow.className = "tableRow";
 				document.getElementById("emailInbox").appendChild(createTableRow);
@@ -51,9 +47,9 @@
 					getTableRow[j].appendChild(createSubject);
 					getTableRow[j].appendChild(createBody);
 				}
-
 			}
 
+			// Set event listener
 			var selectRow = document.getElementsByClassName("tableRow");
 
 			for (var i = 0; i < selectRow.length; i++) {
@@ -61,13 +57,11 @@
 			}
 
 			// Click on nth table row, show nth email
-
 			function showEmail() {
 
 				// Change style to display: block; for .body
-
 				var getBody = this.querySelectorAll(".body")[0];
-				console.log(getBody);
+				// console.log(getBody);
 
 				if (getBody.style.display === "none") {
 					getBody.style.display = "block";
@@ -77,9 +71,49 @@
 			}
 
 			// Inbox counter
-
 			var inboxCounter = window.geemails.length;
 			document.getElementById("counter").innerHTML = "(" + inboxCounter + ")";
+
+			// Create structure for new emails
+			function newEmails() {
+				// Assign getNewMessage to variable
+				var myNewEmail = getNewMessage();
+				console.log(myNewEmail.date);
+
+				// Create table elements
+				var createTableRow = document.createElement("div");
+				createTableRow.className = "tableRow";
+				document.getElementById("emailInbox").appendChild(createTableRow);
+				// Add event listener
+				createTableRow.addEventListener("click", showEmail);
+
+				var createDate = document.createElement("div");
+				createDate.className = "date";
+				createDate.innerHTML = myNewEmail.date;
+				createTableRow.appendChild(createDate);
+
+				var createSender = document.createElement("div");
+				createSender.className = "sender";
+				createSender.innerHTML = myNewEmail.sender;
+				createTableRow.appendChild(createSender);
+
+				var createSubject = document.createElement("div");
+				createSubject.className = "subject";
+				createSubject.innerHTML = myNewEmail.subject;
+				createTableRow.appendChild(createSubject);
+
+				var createBody = document.createElement("div");
+				createBody.className = "body";
+				createBody.innerHTML = myNewEmail.body;
+				createBody.style.display = "none";
+				createTableRow.appendChild(createBody);
+
+				// Increase Inbox counter
+				var inboxCounter = window.geemails.length++;
+				document.getElementById("counter").innerHTML = "(" + inboxCounter + ")";
+			}
+
+			setInterval(newEmails, 3000);
 
 		};
 	</script>
