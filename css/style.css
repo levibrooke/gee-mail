@@ -6,12 +6,29 @@ header {
   padding: 0 20px;
 }
 /* Email Table */
-.body {
-  max-width: 650px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+#inboxContainer {
+
 }
+.tableRow {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 10px 0;
+}
+.date {
+  display: inline;
+  padding-right: 25px;
+}
+.sender {
+  display: inline;
+  padding-right: 25px;
+}
+.subject {
+  display: inline;
+  padding-right: 25px;
+}
+/*.body {
+  display: none;
+}*/
 /* Email Contents */
 .hidden {
   display: none;

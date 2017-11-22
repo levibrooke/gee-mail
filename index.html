@@ -40,10 +40,9 @@
 				var createBody = document.createElement("div");
 				createBody.className = "body";
 				createBody.innerHTML = window.geemails[i].body;
+				createBody.style.display = "none";
 
 				var getTableRow = document.getElementsByClassName("tableRow");
-
-				// var getEmailBody = document.getElementsByClassName("showEmail");
 
 				// Loop through the table rows and appendChild
 				for (var j = 0; j < getTableRow.length; j++) {
@@ -65,16 +64,16 @@
 
 			function showEmail() {
 
+				// Change style to display: block; for .body
 
+				var getBody = this.querySelectorAll(".body")[0];
+				console.log(getBody);
 
-				// var rowNumber = selectRow.rowIndex;
-				// var length = window.geemails.length;
-				// var emailPosition = length - rowNumber;
-
-				// testModal.innerHTML = window.geemails[emailPosition].sender;
-
-				console.log("Testing row click");
-
+				if (getBody.style.display === "none") {
+					getBody.style.display = "block";
+				} else {
+					getBody.style.display = "none";
+				}
 			}
 
 			// Inbox counter
@@ -99,7 +98,7 @@
 				<li class="nav-item">Spam</li>
 				<li class="nav-item">Trash</li>
 			</ul>
-			<div id="inboxContainer">
+			<div id="inboxContainer" class="col-sm-11">
 				<div id="emailInbox"></div>
 			</div>
 		</div>
