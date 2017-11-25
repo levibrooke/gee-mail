@@ -61,12 +61,15 @@
 
 				// Change style to display: block; for .body
 				var getBody = this.querySelectorAll(".body")[0];
-				// console.log(getBody);
+
+				var getRow = getBody.parentElement;
 
 				if (getBody.style.display === "none") {
 					getBody.style.display = "block";
+					getRow.className = "tableRow activeRow";
 				} else {
 					getBody.style.display = "none";
+					getRow.className = "tableRow";
 				}
 			}
 
@@ -78,7 +81,7 @@
 			function newEmails() {
 				// Assign getNewMessage to variable
 				var myNewEmail = getNewMessage();
-				console.log(myNewEmail.date);
+				// console.log(myNewEmail.date);
 
 				// Create table elements
 				var createTableRow = document.createElement("div");
@@ -132,7 +135,7 @@
 				<li class="nav-item">Spam</li>
 				<li class="nav-item">Trash</li>
 			</ul>
-			<div id="inboxContainer" class="col-sm-11">
+			<div id="inboxContainer" class="col-sm-10">
 				<div id="emailInbox"></div>
 			</div>
 		</div>
