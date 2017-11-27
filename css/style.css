@@ -30,20 +30,15 @@ main {
 }
 .date {
   display: inline;
-  padding-right: 25px;
+  padding-right: 40px;
 }
 .sender {
   display: inline;
-  padding-right: 25px;
+  padding-right: 40px;
 }
 .subject {
   display: inline;
-  padding-right: 25px;
 }
 .body {
   padding: 10px 0;
-}
-/* Email Contents */
-.hidden {
-  display: none;
 }
