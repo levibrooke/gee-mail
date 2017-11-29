@@ -83,7 +83,6 @@
 
 				// Assign getNewMessage to variable
 				var myNewEmail = getNewMessage();
-				// console.log(myNewEmail.date);
 
 				// Create table elements
 				var createTableRow = document.createElement("div");
@@ -114,11 +113,13 @@
 				createTableRow.appendChild(createBody);
 
 				// Increase Inbox counter
-				var inboxCounter = window.geemails.length++;
-				document.getElementById("counter").innerHTML = "(" + inboxCounter + ")";
+				// Placed increment operator before variable inboxCounter
+				document.getElementById("counter").innerHTML = "(" + ++inboxCounter + ")";
+
 			}
 
 			setInterval(newEmails, 3000);
+
 
 		};
 	</script>
